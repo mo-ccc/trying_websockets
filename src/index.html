@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+	<head></head>
+	<body>
+		<input id="words"></input>
+		<button onclick="sendmessage()"></button>
+	</body>
+</html>
+
+<script>
+	let socket = new WebSocket("ws://127.0.0.1:8080");
+	socket.onopen = function(e) {console.log(e, "opened")};
+	socket.onclose = function(e) {console.log(e, "closed")};
+	socket.onerror = function(e) {console.log("error", e)};
+	socket.onmessage = function(e) {console.log(e)};
+	
+	function sendmessage() {
+		x = document.querySelector("#words");
+		z = x.value;
+		socket.send(z);
+	}
+	
+</script>
