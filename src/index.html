@@ -2,8 +2,14 @@
 <html>
 	<head></head>
 	<body>
-		<input id="words"></input>
-		<button onclick="sendmessage()"></button>
+		<div class="chatbox">
+			<div class="messages">
+			</div>
+			<div class="controls">
+				<input id="words"></input>
+				<button onclick="sendmessage()">send</button>
+			</div>
+		</div>
 	</body>
 </html>
 
@@ -21,3 +27,17 @@
 	}
 	
 </script>
+
+<style>
+.messages {
+	height: 400px;
+	width: 300px;
+	border: black solid 1px;
+}
+
+.controls {
+	border: black solid 1px;
+	width: 300px;
+}
+
+</style>
